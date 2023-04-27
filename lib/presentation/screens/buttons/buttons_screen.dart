@@ -59,18 +59,57 @@ class _ButtonsView extends StatelessWidget {
               icon: const Icon(Icons.abc),
               label: const Text('Filled Button icon'),
             ),
-            OutlinedButton(onPressed: (){}, child: const Text(' Outlined Button'),),
-            OutlinedButton.icon(onPressed: (){}, label: const Text(' Outlined Button icon'), icon: const Icon(Icons.abc),),
-            TextButton(onPressed: (){}, child: const Text('Text Button')),
-            TextButton.icon(onPressed: (){}, label: const Text('Text Button icon'),icon: const Icon(Icons.abc),),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.abc)),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.abc), 
-            style: 
-            ButtonStyle( 
-              backgroundColor: MaterialStatePropertyAll(colors.primary),)),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text(' Outlined Button'),
+            ),
+            OutlinedButton.icon(
+              onPressed: () {},
+              label: const Text(' Outlined Button icon'),
+              icon: const Icon(Icons.abc),
+            ),
+            TextButton(onPressed: () {}, child: const Text('Text Button')),
+            TextButton.icon(
+              onPressed: () {},
+              label: const Text('Text Button icon'),
+              icon: const Icon(Icons.abc),
+            ),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.abc)),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.abc),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(colors.primary),
+                )),
+            const _CustomButtom()
           ],
-        ),  
-      ),  
+        ),
+      ),
+    );
+  }
+}
+
+class _CustomButtom extends StatelessWidget {
+  const _CustomButtom();
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              'custom button',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
