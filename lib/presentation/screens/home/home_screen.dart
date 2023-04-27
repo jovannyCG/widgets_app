@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_itesms.dart';
-import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,11 +32,13 @@ class _HomeView extends StatelessWidget {
 }
 
 class __MenuElement extends StatelessWidget {
+
+  final MenuItem menuItem;
   const __MenuElement({
     required this.menuItem,
   });
 
-  final MenuItem menuItem;
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +59,12 @@ class __MenuElement extends StatelessWidget {
         //   builder: (context) => const CardsScreen(),
         // ),
         // );
-        
+
          //navegacion a una nueva pagina con rutas
-        Navigator.pushNamed(context, '/buttons');
+        //Navigator.pushNamed(context, '/buttons');
+
+        // navegacion con go_router (hace exactamente lo mismo que las lineas anteriores)
+        context.push(menuItem.link);
       },
     );
   }

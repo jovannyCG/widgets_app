@@ -17,15 +17,15 @@ class MenuItem {
 const appMenuItems = <MenuItem>[
 
   MenuItem(
-    title: 'title', 
-    subTitle: 'subTitle', 
-    link: 'link', 
+    title: 'botones', 
+    subTitle: 'pagina de botones', 
+    link: 'buttons', 
     icon: Icons.abc),
 
  MenuItem(
     title: 'Tarjetas', 
     subTitle: 'contenedor estilizado', 
-    link: 'link', 
+    link: '/cards', 
     icon: Icons.credit_card),
 
 
