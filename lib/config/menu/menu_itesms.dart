@@ -19,7 +19,7 @@ const appMenuItems = <MenuItem>[
   MenuItem(
     title: 'botones', 
     subTitle: 'pagina de botones', 
-    link: 'buttons', 
+    link: '/buttons', 
     icon: Icons.abc),
 
  MenuItem(

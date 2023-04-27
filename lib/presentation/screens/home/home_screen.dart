@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_itesms.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  static const String name = 'home_screen';
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('home scren'),
+          title: const Text('home screen'),
         ),
         body: const _HomeView());
   }
@@ -64,7 +66,12 @@ class __MenuElement extends StatelessWidget {
         //Navigator.pushNamed(context, '/buttons');
 
         // navegacion con go_router (hace exactamente lo mismo que las lineas anteriores)
-        context.push(menuItem.link);
+       // context.push(menuItem.link);
+       // navegacion con go_router con nombre(hace exactamente lo mismo que las lineas anteriores)
+       context.pushNamed(CardsScreen.name);
+
+
+
       },
     );
   }
