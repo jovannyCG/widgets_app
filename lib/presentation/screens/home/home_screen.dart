@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_itesms.dart';
-import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
+import 'package:widgets_app/presentation/screens/screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String name = 'home_screen';
@@ -68,7 +68,7 @@ class __MenuElement extends StatelessWidget {
         // navegacion con go_router (hace exactamente lo mismo que las lineas anteriores)
        // context.push(menuItem.link);
        // navegacion con go_router con nombre(hace exactamente lo mismo que las lineas anteriores)
-       context.pushNamed(CardsScreen.name);
+       context.pushNamed(ButtonsScreen.name);
 
 
 
