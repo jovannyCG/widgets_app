@@ -66,9 +66,9 @@ class __MenuElement extends StatelessWidget {
         //Navigator.pushNamed(context, '/buttons');
 
         // navegacion con go_router (hace exactamente lo mismo que las lineas anteriores)
-       // context.push(menuItem.link);
+        context.push(menuItem.link);
        // navegacion con go_router con nombre(hace exactamente lo mismo que las lineas anteriores)
-       context.pushNamed(ButtonsScreen.name);
+      // context.pushNamed(ButtonsScreen.name);
 
 
 
