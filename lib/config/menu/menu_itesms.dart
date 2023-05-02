@@ -11,33 +11,32 @@ class MenuItem {
       required this.subTitle,
       required this.link,
       required this.icon});
-
 }
 
 const appMenuItems = <MenuItem>[
-
   MenuItem(
-    title: 'botones', 
-    subTitle: 'pagina de botones', 
-    link: '/buttons', 
-    icon: Icons.abc),
-
- MenuItem(
-    title: 'Tarjetas', 
-    subTitle: 'contenedor estilizado', 
-    link: '/cards', 
-    icon: Icons.credit_card),
-
-MenuItem(
-    title: 'Progress Indicator', 
-    subTitle: 'Generales y controlados', 
-    link: '/progress', 
-    icon: Icons.refresh_rounded),
-    MenuItem(
-    title: 'Snack bar', 
-    subTitle: 'indicadores en pantalla', 
-    link: '/snackbar', 
-    icon: Icons.info_rounded),
-
-
+      title: 'botones',
+      subTitle: 'pagina de botones',
+      link: '/buttons',
+      icon: Icons.abc),
+  MenuItem(
+      title: 'Tarjetas',
+      subTitle: 'contenedor estilizado',
+      link: '/cards',
+      icon: Icons.credit_card),
+  MenuItem(
+      title: 'Progress Indicator',
+      subTitle: 'Generales y controlados',
+      link: '/progress',
+      icon: Icons.refresh_rounded),
+  MenuItem(
+      title: 'Snack bar',
+      subTitle: 'indicadores en pantalla',
+      link: '/snackbar',
+      icon: Icons.info_rounded),
+  MenuItem(
+      title: 'Animated container',
+      subTitle: 'statefull widget animado',
+      link: '/container',
+      icon: Icons.check_box_outlined),
 ];
