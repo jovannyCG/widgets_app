@@ -35,5 +35,11 @@ final appRouter = GoRouter(
       path: '/container',
       builder: (context, state) => const AnimatedPage(),
     ),
+
+    GoRoute(
+      name: UiControllsPage.name,
+      path: '/ui-controlls',
+      builder: (context, state) => const UiControllsPage(),
+    ),
   ],
 );
