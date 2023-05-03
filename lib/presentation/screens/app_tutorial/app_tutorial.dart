@@ -8,7 +8,10 @@ static const String name = 'app_tutorial_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        title: const Text('app tutorial'),
+      ),
+      body: const Center(
         child: Text('Hola Mundo'),
      ),
    );
