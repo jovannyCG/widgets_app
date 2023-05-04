@@ -47,5 +47,11 @@ final appRouter = GoRouter(
       path: '/tutorial',
       builder: (context, state) => const AppTutorialPage(),
     ),
+
+    GoRoute(
+      name: InfiniteScrollPage.name,
+      path: '/scroll',
+      builder: (context, state) => const InfiniteScrollPage(),
+    ),
   ],
 );
