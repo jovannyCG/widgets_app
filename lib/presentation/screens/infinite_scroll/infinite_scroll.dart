@@ -56,6 +56,7 @@ class _InfiniteScrollPageState extends State<InfiniteScrollPage> {
     isLoading = false;
     if (!isMounted) return;
     setState(() {});
+    moveScrollToBottom();
   }
 
   void addFiveImages() {
@@ -75,6 +76,15 @@ class _InfiniteScrollPageState extends State<InfiniteScrollPage> {
     addFiveImages();
 
     setState(() {});
+   
+  }
+
+  void moveScrollToBottom(){
+    if(scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent)return;
+    scrollController.animateTo(
+      scrollController.position.pixels + 120, 
+      duration: const Duration(milliseconds: 300), 
+      curve: Curves.fastLinearToSlowEaseIn);
   }
 
   @override
