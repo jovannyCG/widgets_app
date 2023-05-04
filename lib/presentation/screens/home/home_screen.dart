@@ -9,13 +9,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scafoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('home screen'),
-        ),
-        body: const _HomeView(),
-        drawer: const SideMenu(),
-        );
+      key: scafoldKey,
+      appBar: AppBar(
+        title: const Text('home screen'),
+      ),
+      body: const _HomeView(),
+      drawer: SideMenu(
+        scafoldKey: scafoldKey,
+      ),
+    );
   }
 }
 
@@ -36,13 +40,10 @@ class _HomeView extends StatelessWidget {
 }
 
 class __MenuElement extends StatelessWidget {
-
   final MenuItem menuItem;
   const __MenuElement({
     required this.menuItem,
   });
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -64,16 +65,13 @@ class __MenuElement extends StatelessWidget {
         // ),
         // );
 
-         //navegacion a una nueva pagina con rutas
+        //navegacion a una nueva pagina con rutas
         //Navigator.pushNamed(context, '/buttons');
 
         // navegacion con go_router (hace exactamente lo mismo que las lineas anteriores)
         context.push(menuItem.link);
-       // navegacion con go_router con nombre(hace exactamente lo mismo que las lineas anteriores)
-      // context.pushNamed(ButtonsScreen.name);
-
-
-
+        // navegacion con go_router con nombre(hace exactamente lo mismo que las lineas anteriores)
+        // context.pushNamed(ButtonsScreen.name);
       },
     );
   }
