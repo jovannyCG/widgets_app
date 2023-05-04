@@ -1,9 +1,7 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/menu/menu_itesms.dart';
 
 class SideMenu extends StatefulWidget {
-
   const SideMenu({super.key});
 
   @override
@@ -11,24 +9,39 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
-
   int navDrawerIndex = 3;
   @override
   Widget build(BuildContext context) {
+    final hasNoch = MediaQuery.of(context).viewPadding.top > 35;
     return NavigationDrawer(
-      selectedIndex: navDrawerIndex,
-      onDestinationSelected: (value){
-        setState(() {
-          navDrawerIndex = value;
-        });
-      },
-      children: [
-
-            NavigationDrawerDestination(icon: Icon(Icons.confirmation_num_sharp), label: Text('home screen')),
-            NavigationDrawerDestination(icon: Icon(Icons.confirmation_num_sharp), label: Text('otra pantalla')),
-            NavigationDrawerDestination(icon: Icon(Icons.confirmation_num_sharp), label: Text('hola')),
-            NavigationDrawerDestination(icon: Icon(Icons.confirmation_num_sharp), label: Text('hola'))
-
-      ]);
+        selectedIndex: navDrawerIndex,
+        onDestinationSelected: (value) {
+          setState(() {
+            navDrawerIndex = value;
+          });
+        },
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(28, hasNoch ? 10 : 20, 16, 10),
+            child: const Text('Menú'),
+          ),
+          ...appMenuItems.sublist(0, 3).map(
+                (item) => NavigationDrawerDestination(
+                    icon: Icon(item.icon), label: Text(item.title)),
+              ),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
+            child: Divider(),
+          ),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
+            child: Text('More options'),
+          ),
+          ...appMenuItems.sublist(3).map(
+                (item) => NavigationDrawerDestination(
+                    icon: Icon(item.icon), label: Text(item.title)),
+              ),
+        
+        ]);
   }
 }
