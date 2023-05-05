@@ -8,14 +8,18 @@ class ThemePage extends ConsumerWidget {
   const ThemePage({super.key});
   @override
   Widget build(BuildContext context, ref) {
-    final isDarkMode = ref.watch(isDarkmodeProvider);
+    //final isDarkMode = ref.watch(isDarkmodeProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkmode;
     return Scaffold(
+
       appBar: AppBar(
         title: const Text('Theme Changer'),
         actions: [
           IconButton(
             onPressed: () {
-              ref.read(isDarkmodeProvider.notifier).update((isDarkMode) => !isDarkMode);
+            ref.read(themeNotifierProvider.notifier).toggleDarkMode();
+                
+              //ref.read(isDarkmodeProvider.notifier).update((isDarkMode) => !isDarkMode);
             },
             icon: isDarkMode
                 ? const Icon(Icons.dark_mode_outlined)
