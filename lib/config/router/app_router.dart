@@ -60,5 +60,11 @@ final appRouter = GoRouter(
       path: '/counter',
       builder: (context, state) => const CounterPage(),
     ),
+
+    GoRoute(
+      name: ThemePage.name,
+      path: '/theme',
+      builder: (context, state) =>  const ThemePage(),
+    ),
   ],
 );
