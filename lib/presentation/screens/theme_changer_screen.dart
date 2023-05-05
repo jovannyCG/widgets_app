@@ -15,7 +15,7 @@ class ThemePage extends ConsumerWidget {
         actions: [
           IconButton(
             onPressed: () {
-              //ref.read(isDarkmodeProvider.notifier).update((isDarkMode) => !isDarkMode);
+              ref.read(isDarkmodeProvider.notifier).update((isDarkMode) => !isDarkMode);
             },
             icon: isDarkMode
                 ? const Icon(Icons.dark_mode_outlined)
@@ -34,19 +34,25 @@ class _ThemeChangerView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final List<Color> colors = ref.watch(colorListProvider);
+    final int indexColor = ref.watch(selectedColor);
+   
+
     return ListView.builder(
-      itemCount: colors.length,
-      itemBuilder: (context, index) {
-        final color = colors[index];
-        return RadioListTile(
-          activeColor: color,
-          title: Text('Este color', style: TextStyle(color: color),),
-          subtitle: Text('E${color.value}'),
-          value: index, 
-          groupValue: 0, 
-          onChanged: (value){});
-
-
-    });
+        itemCount: colors.length,
+        itemBuilder: (context, index) {
+          final color = colors[index];
+          return RadioListTile(
+              activeColor: color,
+              title: Text(
+                'Este color',
+                style: TextStyle(color: color),
+              ),
+              subtitle: Text('E${color.value}'),
+              value: index,
+              groupValue: indexColor,
+              onChanged: (value) {
+                ref.read(selectedColor.notifier).state = index;
+              });
+        });
   }
 }
