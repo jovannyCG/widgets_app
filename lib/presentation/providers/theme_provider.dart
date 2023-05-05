@@ -22,5 +22,7 @@ void toggleDarkMode(){
   state = state.copyWith(isDarkmode: !state.isDarkmode);
 }
 
-
+void changeColorIndex(int index){
+ state = state.copyWith(selectedColor: index);
+}
 }
